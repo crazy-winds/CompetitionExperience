@@ -3,7 +3,7 @@
 #### Kaggle - BirdCLEF 2023
 2023.2 - 2023.5
 
-成绩: 
+成绩: 17 (银牌)
 
 地址: <a href="https://www.kaggle.com/competitions/birdclef-2023">BirdCLEF 2023</a>
 
