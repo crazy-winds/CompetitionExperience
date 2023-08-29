@@ -59,3 +59,26 @@ ____
 明显提点技巧:
 - mixup（mul_mixup提点更多一些）
 - TTA后使用WBF融合
+
+____
+#### 讯飞 - 鸟类品种识别挑战赛
+2023.7 - 2023.8
+
+成绩: 7 (勉勉强强)
+地址: <a href="https://challenge.xfyun.cn/topic/info?type=bird-species&option=ssgy&ch=ijcX54b">鸟类品种识别挑战赛</a>
+
+类型：图片分类
+
+任务: 通过人工智能技术实现对鸟类图片的自动识别和分类。
+
+评估指标：macro-F1 score
+
+方法：
+- 基本数据增强（旋转、翻转等）
+- DINOv2（dinov2_vitl14_lc）冻结所有参数，另外训练两层MLP
+- Adan
+- accelerate train(Multi GPU、FP16)
+
+明显提点技巧:
+- 并无明显提点（分数已经封顶，3个人满分）
+____
