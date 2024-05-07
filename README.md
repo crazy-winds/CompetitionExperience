@@ -12,6 +12,7 @@
 任务: 在本次比赛中，您将使用机器学习技能通过声音识别东非鸟类。
 
 评估指标:
+
 ![](Cache/Image/bird_.png)
 
 方案:
@@ -65,6 +66,7 @@ ____
 2023.7 - 2023.8
 
 成绩: 7 (勉勉强强)
+
 地址: <a href="https://challenge.xfyun.cn/topic/info?type=bird-species&option=ssgy&ch=ijcX54b">鸟类品种识别挑战赛</a>
 
 类型：图片分类
@@ -82,3 +84,36 @@ ____
 明显提点技巧:
 - 并无明显提点（分数已经封顶，3个人满分）
 ____
+
+#### Kaggle - PII Data Detection
+2024.1 - 2024.4
+
+成绩: **_774 / 2048_** (菜)
+
+地址: [PII Data Detection](https://www.kaggle.com/competitions/pii-detection-removal-from-educational-data)
+
+类型：NER（Named Entity Recognition）
+
+任务: 检测给定文本中的 PII（学生姓名、作者等）。
+
+评估指标：micro-F5 score （计算除 "O" 外标签的 F5 分数）
+
+方法：
+- Deberta-v3-base 冻结 Word Embedding
+- 文本过长的按分段处理，即随机抽取文本的一段代表当前文本
+- spacy词性分析代替 type_id + AD-Dropout 取代 Attention Dropout
+- CrossEntropyLoss 降低 "O" 的权重
+- AdamW
+- accelerate train(Multi GPU、FP16)
+
+明显提点技巧:
+- 分段：使得模型可以看到整个文本，提升召回率
+- 词性分析+AD-Dropout（单独使用会掉点）
+- 模型集成（软投票）
+
+参考文献:
+- [AD-Dropout](https://paperswithcode.com/paper/ad-drop-attribution-driven-dropout-for-robust)
+- [Baseline](https://www.kaggle.com/code/valentinwerner/915-deberta3base-training)
+- [$F_\beta$ Score](https://www.kaggle.com/code/conjuring92/pii-metric-fine-grained-eval)
+___
+
