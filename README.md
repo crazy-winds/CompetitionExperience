@@ -1,5 +1,7 @@
 # CompetitionExperience
 
+**Life is not a competition, Life is about helping and inspiring others so we can each reach our potential.**
+
 #### Kaggle - BirdCLEF 2023
 2023.2 - 2023.5
 
